@@ -1,28 +1,29 @@
-<section id = "stronapierw">
-    <div class = "first-page">
+
+    <div class = "first-page" id = "stronapierw">
         <video class="BGvideo" src="assets/Media/video.mp4" autoplay loop muted></video>
       <header>
         <div class = "nawigacja">
           <div data-aos="fade-right" data-aos-duration="1000" class = "logo"><img src = "assets/Media/logo.jpg"></div>
           <nav>
             <ul class = "menu">
-              <li class = "item"><a href = "#stronapierw" class = "link" data-aos="fade-up" data-aos-duration="2000">Home</a></li>
-              <li class = "item"><a href = "#stronadrug" class = "link" data-aos="fade-up" data-aos-duration="2000">About us</a></li>
-              <li class = "item"><a href = "#stronatrzecia" class = "link" data-aos="fade-up" data-aos-duration="2000">Charity and Trips</a></li>
-              <li class = "item"><a href = "#stronaczwarta" class = "link" data-aos="fade-up" data-aos-duration="2000">Contact</a></li>
+              <li (click) = "ToHome()" routerLink = "/home" routerLinkActive = "active" class = "item" data-aos="fade-down"
+                  data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><a class = "link">{{'Home' | translate}}</a></li>
+              <li (click) = "ToSecondPage()" routerLinkActive = "active" class = "item" data-aos="fade-down"
+                  data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><a  class = "link">{{'About us' | translate}}</a></li>
+              <li (click) = "ToThirdPage()" routerLinkActive = "active" class = "item" data-aos="fade-down"
+                  data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><a  class = "link" >{{'Charity and Trips' | translate}}</a></li>
+              <li (click) = "ToContactPage()" routerLinkActive = "active" class = "item" data-aos="fade-down"
+                  data-aos-anchor-placement="top-bottom" data-aos-duration="1000"><a  class = "link">{{'Contact' | translate}}</a></li>
+              <select #selLang class="custom-select" (change)="translateLanguageTo(selLang.value)">
+                  <option *ngFor="let language of translate.getLangs()" [value]="language">{{ language }}</option>
+              </select>
             </ul>
-            <div class = "hamburger">
-              <span class="bar"></span>
-              <span class="bar"></span>
-              <span class="bar"></span>
-            </div>
           </nav>
         </div>
       </header>
-  
       <div class = "content">
         <h1 class = "title" data-aos="fade-up" data-aos-duration="2000">Learning & Fun Press</h1>
-        <a href ="#przycisk" class = "AboutS">About us</a>
+        <a (click) = "ToSecondPage()" routerLinkActive = "active" class = "AboutS">{{'About us' | translate}}</a>
       </div>
     </div>
-  </section>
+ 
